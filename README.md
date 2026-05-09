@@ -273,7 +273,7 @@ Companion paper:
 ## Data Availability
 
 Numerical data and trained model parameters will be deposited on Zenodo upon acceptance.  
-**Zenodo DOI:** `10.5281/zenodo.20099263` *(to be finalised upon acceptance)*
+**Zenodo DOI:** `10.5281/zenodo.20099263` 
 
 ---
 

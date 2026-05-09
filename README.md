@@ -83,7 +83,9 @@ oam-gkp-quantum-metrology/
 │   ├── noise.py                    # Loss (ℰ_η) and dephasing (ℰ_γ) channels
 │   ├── optimizer.py                # Adam optimizer with cosine LR annealing
 │   ├── qfi.py                      # Quantum Fisher information: F_Q = 4·Var(n̂)
-│   └── run_fractional_ell.py       # Fractional ℓ sweep (ℓ = 0 to ℓ_max)
+│   ├── run_fractional_ell.py       # Fractional ℓ sweep (ℓ = 0 to ℓ_max)
+│   ├── states.py                   # GKP state preparation and caching
+│   └── utils.py                    # Shared utilities and helper functions
 │
 ├── circuit_diagram.png             # Fig. 1 — circuit schematic (Inkscape)
 │
@@ -120,6 +122,7 @@ oam-gkp-quantum-metrology/
 ├── README.md
 └── LICENSE
 ```
+
 
 ---
 

@@ -1,7 +1,7 @@
 # OAM-Induced Lattice Rotation Reveals a Fractional Optimum in Fault-Tolerant GKP Quantum Sensing
 
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
-[![Zenodo](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.XXXXXXX-blue)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![Zenodo](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20099263-blue)](https://doi.org/10.5281/zenodo.20099263)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python 3.10](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
 [![Strawberry Fields](https://img.shields.io/badge/Strawberry%20Fields-%E2%89%A50.23-red.svg)](https://strawberryfields.ai/)

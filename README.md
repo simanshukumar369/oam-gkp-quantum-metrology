@@ -94,18 +94,22 @@ oam-gkp-quantum-metrology/
 │   ├── fractional_ell_results.csv  # Full ℓ sweep data
 │   ├── hexagonal_results.json      # Hexagonal lattice comparison data
 │   └── figures/                    # All generated figures (PDF/PNG)
-│       ├── training_eta0.9_gamma0.05_ell0.0.pdf   # Appendix Fig. A1
-│       ├── training_eta0.9_gamma0.05_ell1.0.pdf   # Appendix Fig. A2
-│       ├── training_eta0.9_gamma0.05_ell2.0.pdf   # Appendix Fig. A3
-│       ├── training_eta0.8_gamma0.1_ell0.0.pdf    # Appendix Fig. A4
-│       ├── training_eta0.8_gamma0.1_ell1.0.pdf    # Appendix Fig. A5
-│       ├── training_eta0.8_gamma0.1_ell2.0.pdf    # Appendix Fig. A6
-│       ├── wigner_eta0.9_gamma0.05_ell0.0.pdf     # Wigner — square, low noise
-│       ├── wigner_eta0.9_gamma0.05_ell1.0.pdf     # Wigner — ℓ=1, low noise
-│       ├── wigner_eta0.9_gamma0.05_ell2.0.pdf     # Wigner — ℓ=2, low noise
-│       ├── wigner_eta0.8_gamma0.1_ell0.0.pdf      # Wigner — square, high noise
-│       ├── wigner_eta0.8_gamma0.1_ell1.0.pdf      # Wigner — ℓ=1, high noise
-│       └── wigner_eta0.8_gamma0.1_ell2.0.pdf      # Wigner — ℓ=2, high noise
+│       ├── training_eta0.90_gamma0.050_ell0.0.pdf  # Appendix Fig. A1
+│       ├── training_eta0.90_gamma0.050_ell1.0.pdf  # Appendix Fig. A2
+│       ├── training_eta0.90_gamma0.050_ell1.5.pdf  # Appendix Fig. A3
+│       ├── training_eta0.90_gamma0.050_ell2.0.pdf  # Appendix Fig. A4
+│       ├── training_eta0.80_gamma0.100_ell0.0.pdf  # Appendix Fig. A5
+│       ├── training_eta0.80_gamma0.100_ell1.0.pdf  # Appendix Fig. A6
+│       ├── training_eta0.80_gamma0.100_ell1.5.pdf  # Appendix Fig. A7
+│       ├── training_eta0.80_gamma0.100_ell2.0.pdf  # Appendix Fig. A8
+│       ├── wigner_eta0.90_gamma0.050_ell0.0.pdf    # Wigner — square, low noise
+│       ├── wigner_eta0.90_gamma0.050_ell1.0.pdf    # Wigner — ℓ=1, low noise
+│       ├── wigner_eta0.90_gamma0.050_ell1.5.pdf    # Wigner — ℓ=1.5 ★, low noise
+│       ├── wigner_eta0.90_gamma0.050_ell2.0.pdf    # Wigner — ℓ=2, low noise
+│       ├── wigner_eta0.80_gamma0.100_ell0.0.pdf    # Wigner — square, high noise
+│       ├── wigner_eta0.80_gamma0.100_ell1.0.pdf    # Wigner — ℓ=1, high noise
+│       ├── wigner_eta0.80_gamma0.100_ell1.5.pdf    # Wigner — ℓ=1.5 ★, high noise
+│       └── wigner_eta0.80_gamma0.100_ell2.0.pdf    # Wigner — ℓ=2, high noise
 │
 ├── main.py                         # Main entry point — training + results
 ├── optimizer.py                    # Top-level optimizer entry point
@@ -186,6 +190,13 @@ python main.py --mode diagram                                      # phase diagr
 python main.py --mode verify                                       # verify balance equation
 ```
 
+### Key ℓ=1.5 runs (global optimum)
+
+```bash
+python main.py --mode single --eta 0.9 --gamma 0.05 --ell 1.5   # fractional optimum, low noise
+python main.py --mode single --eta 0.8 --gamma 0.10 --ell 1.5   # fractional optimum, high noise
+```
+
 ### Tables and derivations
 
 ```bash
@@ -226,12 +237,14 @@ python figures_analysis.py --fig perr_theta_curve
 # Fig. 10 — θ*(η, γ) phase diagram
 python figures_analysis.py --fig theta_phase_diagram
 
-# Appendix Figs. A1–A6 — training convergence per run
+# Appendix Figs. A1–A8 — training convergence per run
 python main.py --mode single --eta 0.9 --gamma 0.05 --ell 0.0
 python main.py --mode single --eta 0.9 --gamma 0.05 --ell 1.0
+python main.py --mode single --eta 0.9 --gamma 0.05 --ell 1.5
 python main.py --mode single --eta 0.9 --gamma 0.05 --ell 2.0
 python main.py --mode single --eta 0.8 --gamma 0.10 --ell 0.0
 python main.py --mode single --eta 0.8 --gamma 0.10 --ell 1.0
+python main.py --mode single --eta 0.8 --gamma 0.10 --ell 1.5
 python main.py --mode single --eta 0.8 --gamma 0.10 --ell 2.0
 
 # Generate ALL figures at once

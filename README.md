@@ -72,7 +72,9 @@ whose solution $\theta^*(\eta, \gamma, r)$ is proven to decrease monotonically w
 
 - $\mathcal{F}_Q = 9.764$ — geometry-invariant ($< 0.2\%$ variation across all geometries)
 - Optimal angle $\theta^* = 64.4^\circ$ from the transcendental balance equation
-- Metrological capacity $\mathcal{C} = \mathcal{F}_Q \cdot (-\ln P_{\rm err})$: **+41% gain** at $\ell=1.5$
+- Metrological capacity **+41% gain** at $\ell=1.5$:
+
+$$\mathcal{C} = \mathcal{F}_{Q} \cdot (-\ln P_{\mathrm{err}}) = 107.1$$
 
 ---
 

@@ -1,11 +1,10 @@
 # OAM-Induced Lattice Rotation Reveals a Fractional Optimum in Fault-Tolerant GKP Quantum Sensing
 
-[![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![arXiv](https://img.shields.io/badge/arXiv-2605.13271-b31b1b.svg)](https://arxiv.org/abs/2605.13271)
 [![Zenodo](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20099263-blue)](https://doi.org/10.5281/zenodo.20099263)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python 3.10](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
 [![Strawberry Fields](https://img.shields.io/badge/Strawberry%20Fields-%E2%89%A50.23-red.svg)](https://strawberryfields.ai/)
-
 
 **Corresponding Authors:**
 
@@ -15,10 +14,9 @@
   <sup>2</sup>  Applied Optics & Spectroscopy Laboratory, Department of Physics,  
   Soban Singh Jeena University Campus, Almora, Uttarakhand, India–263601
 
-† [simanshu@kunainital.ac.in](mailto:simanshu@kunainital.ac.in) &nbsp; \* [bisht.nandan@kunainital.ac.in](mailto:bisht.nandan@kunainital.ac.in)
+<sup>†</sup> [simanshu@kunainital.ac.in](mailto:simanshu@kunainital.ac.in) &nbsp; <sup>*</sup>[bisht.nandan@kunainital.ac.in](mailto:bisht.nandan@kunainital.ac.in)
 
 ---
-
 
 ## Overview
 
@@ -26,21 +24,29 @@ This repository contains the complete simulation code and figure-generation scri
 
 > **OAM-Induced Lattice Rotation Reveals a Fractional Optimum in Fault-Tolerant GKP Quantum Sensing**  
 > Simanshu Kumar and Nandan S Bisht (2026)  
-> *arXiv:XXXX.XXXXX*
+> [arXiv:2605.13271](https://arxiv.org/abs/2605.13271) \[quant-ph\]
 
 ### Key Result
 
-Orbital angular momentum (OAM) encoding and GKP lattice geometry are structurally coupled: a fractional OAM charge **ℓ = 1.5** — implemented via a fractional Fourier transform of order α = 0.75 — achieves a **23.9× reduction** in logical error rate over the square-lattice baseline, while leaving the quantum Fisher information unchanged to within 0.2%.
+OAM encoding and GKP lattice geometry are structurally coupled: a fractional OAM charge $\ell = 1.5$ — implemented via a fractional Fourier transform of order $\alpha = 0.75$ — achieves a **23.9× reduction** in logical error rate $P_{\rm err}$ over the square-lattice baseline, while leaving the quantum Fisher information $\mathcal{F}_Q$ unchanged to within $0.2\%$.
 
 ---
 
 ## Summary
 
-GKP (Gottesman–Kitaev–Preskill) codes protect quantum information by encoding a logical qubit into the position-momentum phase space of a harmonic oscillator using a periodic stabilizer lattice. The lattice geometry — its orientation angle θ and aspect ratio r — directly determines how well the code corrects errors from photon loss and dephasing noise.
+GKP (Gottesman–Kitaev–Preskill) codes protect quantum information by encoding a logical qubit into the position-momentum phase space of a harmonic oscillator using a periodic stabilizer lattice. The lattice geometry — its orientation angle $\theta$ and aspect ratio $r$ — directly determines how well the code corrects errors from photon loss $\eta$ and dephasing $\gamma$.
 
-This work establishes that orbital angular momentum (OAM) modes provide a natural geometric handle for rotating the GKP stabilizer lattice: a mode of topological charge ℓ (implemented physically as a fractional Fourier transform of order α = 2ℓ/ℓ_max) induces a continuous phase-space rotation θ_ℓ = ℓπ/ℓ_max. Using an end-to-end differentiable simulation built on Strawberry Fields and TensorFlow, we jointly optimize the lattice angle, aspect ratio r, finite-energy envelope ε, and adaptive homodyne angle ψ to simultaneously maximize quantum Fisher information F_Q and minimize the logical error rate P_err.
+This work establishes that orbital angular momentum (OAM) modes provide a natural geometric handle for rotating the GKP stabilizer lattice: a mode of topological charge $\ell$ (implemented physically as a fractional Fourier transform of order $\alpha = 2\ell/\ell_{\max}$) induces a continuous phase-space rotation
 
-The central finding is that the globally optimal rotation is achieved at the **fractional** OAM charge **ℓ = 1.5** (θ = 67.5°) — surpassing all integer values including ℓ = 2 (15.7×) by a factor of **23.9×** over the square-lattice baseline. This fractional optimum arises from an exact 180° periodicity in the P_err(θ) landscape, confirmed analytically via a transcendental balance equation whose solution θ*(η, γ, r) is proven to decrease monotonically with both the dephasing rate γ and the efficiency η. The optimum is experimentally accessible via a cylindrical-lens fractional Fourier transformer (α = 0.75) or a spatial light modulator — linear optics requiring no additional squeezing or non-Gaussian resources.
+$$\theta_\ell = \frac{\ell\,\pi}{\ell_{\max}}.$$
+
+Using an end-to-end differentiable simulation built on Strawberry Fields and TensorFlow, we jointly optimize the lattice angle $\theta_\ell$, aspect ratio $r$, finite-energy envelope $\epsilon$, and adaptive homodyne angle $\psi$ to simultaneously maximize $\mathcal{F}_Q$ and minimize $P_{\rm err}$ subject to $P_{\rm err} \leq 10^{-3}$.
+
+The central finding is that the globally optimal rotation is achieved at the **fractional** OAM charge $\ell = 1.5$ ($\theta = 67.5^\circ$) — surpassing all integer values including $\ell = 2$ ($15.7\times$) by a factor of **23.9×** over the square-lattice baseline. This fractional optimum arises from an exact $180^\circ$ periodicity in the $P_{\rm err}(\theta)$ landscape, confirmed analytically via the transcendental balance equation
+
+$$\mathcal{B}(\theta;\eta,\gamma,r) \;\equiv\; r^2\,\frac{\phi(u_q)}{\sigma_q^3} - \frac{\phi(u_p)}{\sigma_p^3} = 0,$$
+
+whose solution $\theta^*(\eta, \gamma, r)$ is proven to decrease monotonically with both $\gamma$ and $\eta$. The optimum is experimentally accessible via a cylindrical-lens fractional Fourier transformer ($\alpha = 0.75$) or a spatial light modulator — linear optics requiring no additional squeezing or non-Gaussian resources.
 
 ---
 
@@ -48,25 +54,25 @@ The central finding is that the globally optimal rotation is achieved at the **f
 
 ![OAM-GKP sensing circuit](circuit_diagram.png)
 
-**Trainable parameters:** `r` (aspect ratio), `ε` (envelope), `ℓ` (OAM charge → `θ_ℓ = ℓπ/ℓ_max`), `ψ` (homodyne angle)  
-**Fixed parameters:** `φ_est` (scanned to produce error landscape) · `η`, `γ` (noise points)  
-**Output:** logical error rate `P_err` and quantum Fisher information `F_Q`  
-**Optimiser:** Adam · 500 steps · cosine LR annealing (lr₀ = 5×10⁻³) · gradient clip 1.0
+**Trainable parameters:** $r$ (aspect ratio), $\epsilon$ (envelope), $\ell$ (OAM charge $\to$ $\theta_\ell = \ell\pi/\ell_{\max}$), $\psi$ (homodyne angle)  
+**Fixed parameters:** $\varphi_{\rm est}$ (scanned to produce error landscape) · $\eta$, $\gamma$ (noise points)  
+**Output:** logical error rate $P_{\rm err}$ and quantum Fisher information $\mathcal{F}_Q$  
+**Optimiser:** Adam · 500 steps · cosine LR annealing (${\rm lr}_0 = 5\times10^{-3}$) · gradient clip 1.0
 
 ---
 
 ## Key Results
 
-| Geometry | ℓ | θ | P_err (η=0.9, γ=0.05) | Improvement | C |
+| Geometry | $\ell$ | $\theta$ | $P_{\rm err}$ ($\eta{=}0.9$, $\gamma{=}0.05$) | Improvement | $\mathcal{C}$ |
 |---|---|---|---|---|---|
-| Square | 0 | 0° | 4.13 × 10⁻⁴ | 1.0× | 76.1 |
-| OAM ℓ=1 | 1 | 45° | 5.42 × 10⁻⁵ | 7.6× | 96.0 |
-| **OAM ℓ=1.5 ★** | **1.5** | **67.5°** | **1.73 × 10⁻⁵** | **23.9×** | **107.1** |
-| OAM ℓ=2 | 2 | 90° | 2.63 × 10⁻⁵ | 15.7× | 103.0 |
+| Square | $0$ | $0^\circ$ | $4.13 \times 10^{-4}$ | $1.0\times$ | $76.1$ |
+| OAM $\ell=1$ | $1$ | $45^\circ$ | $5.42 \times 10^{-5}$ | $7.6\times$ | $96.0$ |
+| **OAM $\ell=1.5$ ★** | $\mathbf{1.5}$ | $\mathbf{67.5^\circ}$ | $\mathbf{1.73 \times 10^{-5}}$ | $\mathbf{23.9\times}$ | $\mathbf{107.1}$ |
+| OAM $\ell=2$ | $2$ | $90^\circ$ | $2.63 \times 10^{-5}$ | $15.7\times$ | $103.0$ |
 
-- F_Q = 9.764 — geometry-invariant (< 0.2% variation)
-- Optimal angle θ* = 64.4° from the transcendental balance equation
-- Metrological capacity: **+41% gain** at ℓ=1.5
+- $\mathcal{F}_Q = 9.764$ — geometry-invariant ($< 0.2\%$ variation across all geometries)
+- Optimal angle $\theta^* = 64.4^\circ$ from the transcendental balance equation
+- Metrological capacity $\mathcal{C} = \mathcal{F}_Q \cdot (-\ln P_{\rm err})$: **+41% gain** at $\ell=1.5$
 
 ---
 
@@ -127,7 +133,6 @@ oam-gkp-quantum-metrology/
 └── LICENSE
 ```
 
-
 ---
 
 ## Installation
@@ -179,7 +184,7 @@ cd oam-gkp-quantum-metrology
 python main.py --mode single
 ```
 
-Runs 500-step Adam optimisation for each (η, γ, ℓ) combination (~125–130 s per run on RTX 3050).
+Runs 500-step Adam optimisation for each $(\eta, \gamma, \ell)$ combination (~125–130 s per run on RTX 3050).
 
 ### Individual modes
 
@@ -190,7 +195,7 @@ python main.py --mode diagram                                      # phase diagr
 python main.py --mode verify                                       # verify balance equation
 ```
 
-### Key ℓ=1.5 runs (global optimum)
+### Key $\ell=1.5$ runs (global optimum)
 
 ```bash
 python main.py --mode single --eta 0.9 --gamma 0.05 --ell 1.5   # fractional optimum, low noise
@@ -209,33 +214,33 @@ python derivations.py    # D1–D12 derivation verification
 All figures are generated programmatically except Fig. 1 (circuit diagram, provided as `circuit_diagram.png`).
 
 ```bash
-# Fig. 2 — Noise landscape
+# Fig. 2 — Noise landscape: P_err(θ) at low and high noise
 python figures_nature.py --fig noise_landscape
 
 # Fig. 3 — Lattice geometry comparison
 python figures_nature.py --fig geometry_comparison
 
-# Fig. 4 — Wigner functions (run training first)
+# Fig. 4 — Wigner functions W(q,p) — run training first
 python main.py --mode single
 python figures_nature.py --fig wigner
 
-# Fig. 5 — Improvement summary
+# Fig. 5 — P_err improvement summary
 python figures_nature.py --fig improvement_summary
 
 # Fig. 6 — Fractional ℓ curve
 python figures_nature.py --fig fractional_ell
 
-# Fig. 7 — Phase diagram
-python figures_nature.py --fig phase_diagram
-
-# Fig. 8 — Convergence histories
-python figures_nature.py --fig convergence
-
-# Fig. 9 — P_err(θ) curve
+# Fig. 7 — P_err(θ) curve with analytic optimum θ*
 python figures_analysis.py --fig perr_theta_curve
 
-# Fig. 10 — θ*(η, γ) phase diagram
+# Fig. 8 — Phase diagram
+python figures_nature.py --fig phase_diagram
+
+# Fig. 9 — θ*(η, γ) phase diagram
 python figures_analysis.py --fig theta_phase_diagram
+
+# Fig. 10 — Convergence histories
+python figures_nature.py --fig convergence
 
 # Appendix Figs. A1–A8 — training convergence per run
 python main.py --mode single --eta 0.9 --gamma 0.05 --ell 0.0
@@ -261,7 +266,7 @@ python figures_nature.py && python figures_analysis.py
                    in Fault-Tolerant {GKP} Quantum Sensing},
   author        = {Kumar, Simanshu and Bisht, Nandan S.},
   year          = {2026},
-  eprint        = {XXXX.XXXXX},
+  eprint        = {2605.13271},
   archivePrefix = {arXiv},
   primaryClass  = {quant-ph}
 }
@@ -285,8 +290,8 @@ Companion paper:
 
 ## Data Availability
 
-Numerical data and trained model parameters will be deposited on Zenodo upon acceptance.  
-**Zenodo DOI:** `10.5281/zenodo.20099263` 
+Numerical data and trained model parameters are archived on Zenodo.  
+**Zenodo DOI:** [`10.5281/zenodo.20099263`](https://doi.org/10.5281/zenodo.20099263)
 
 ---
 
